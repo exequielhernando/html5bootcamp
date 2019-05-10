@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <header>
+        <h1>Sign up Form</h1>
+    </header>
+    <section>
+        <div id="login" class="form">
+            <form action="mypage.php" autocomplete="on">
+                <p>
+                    <label for="usernamesignup" class="username">Your name</label>
+                    <input type="text" name="usernamesignup" required="required" placeholder="Name">
+                </p>
+                <p>
+                    <label for="userlastnamesignup" class="userlastname">Your Last name</label>
+                    <input type="text" name="userlastnamesignup" required="required" placeholder="Last Name">
+                </p>
+                <p>
+                    <label for="emailsignup" class="youmail" > Your email</label>
+                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="ejemplo@mail.com" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/> 
+                </p>
+                <p>
+                    <label for="userbirthdaysignup" class="userbirthday">Your Birthday</label>
+                    <input type="date" name="userbirthdaysignup" required="required">
+                </p>
+                <p>
+                    <label for="favouritesportsignup" class="favouritesport">Your favourite sport</label>
+                    <select name="sport" required="required">
+                        <option value="football">Football</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="handball">Handball</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="biosignup" class="bio">Write a small biography</label>
+                    <textarea name="bio" id="" cols="30" rows="5" required="required"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Sign up</button>
+                </p>
+                <p>
+                    <button type="reset">Reset</button>
+                </p>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
