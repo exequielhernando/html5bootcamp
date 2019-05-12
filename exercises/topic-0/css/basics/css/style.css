@@ -1,0 +1,15 @@
+header, nav, section, article, aside, footer{
+    border: 2px solid rgb(95, 19, 19);
+    padding: 0.8em;
+    margin: 0.8em;
+    text-align: center;
+}
+nav, section, aside{   
+    float: left;
+    width: 28.3%;
+    background-color: aqua;
+    height: 14.77em;
+}
+footer{
+    clear: both;
+}
