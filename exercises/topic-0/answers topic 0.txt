@@ -1,0 +1,16 @@
+Answers for Topic 0
+
+2.3 Specificity
+	Excercise 6
+		How could you add weight to the global font definition to win over the classes added by point 3?
+			- You could add an id selector to the body or the html tag and use the #name selector to call it. 
+				The id selector is more specific than the class selector
+			- We can use the exception "!important", although it is not recommended
+			
+	Excercice 7
+		Imagine there is a declaration like class=”oh-no-inline-styles” style=”background:red” and you need to change the background to green without changing the inline style. How could you accomplish this?
+
+
+2.4 The Box Model
+	
+	- We can say that the management of Box-model is very important for the good location of the boxes and their content on our page
