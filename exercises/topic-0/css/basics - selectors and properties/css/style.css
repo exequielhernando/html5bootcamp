@@ -6,7 +6,7 @@ header, nav, section, article, aside, footer{
 nav, section, aside{   
     float: left;
     width: 28.3%;
-    height: 14.77em;
+    height: 25em;
 }
 footer{
     clear: both;
@@ -20,4 +20,16 @@ body{
 }
 header, footer{
     text-align: center;
+}
+header.header{
+    font-size: 46px;
+}
+footer.footer, aside.sidebar{
+    font-size: 10px;
+}
+section.content{
+    font-size: 14px;
+}
+nav.navigation{
+    font-size: 12px;
 }
