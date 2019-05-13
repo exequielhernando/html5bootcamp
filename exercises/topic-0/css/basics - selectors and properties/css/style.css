@@ -33,3 +33,9 @@ section.content{
 nav.navigation{
     font-size: 12px;
 }
+*[class $= "r"]{
+    background-color: magenta;
+}
+*[class *= "a"]:not([class $= "r"]){
+    background-color: blue;
+}
