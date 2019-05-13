@@ -38,17 +38,27 @@ section.content{
 nav.navigation{
     font-size: 12px;
 }
+/* all class attribute finishes with r (example header, footer) background be magenta.*/
 *[class $= "r"]{
     background-color: magenta;
 }
+/* all class attribute contains an a (example nav) but do NOT finish with r,background be blue.*/
 *[class *= "a"]:not([class $= "r"]){
     background-color: blue;
 }
-/* 
+
+/*Example and test of global font weight
+
 #general{
     width: 140%;
 }
 body{
     width: 200% !important;
+}
+*/
+
+/*Example and test of change background without changing the inline style
+.oh-no-inline-styles{
+        background-color: green !important;
 }
 */

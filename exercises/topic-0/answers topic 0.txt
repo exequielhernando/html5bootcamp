@@ -9,7 +9,7 @@ Answers for Topic 0
 			
 	Excercice 7
 		Imagine there is a declaration like class=”oh-no-inline-styles” style=”background:red” and you need to change the background to green without changing the inline style. How could you accomplish this?
-
+			-We can try to rewrite the class and modify only the background color and cascade rule the last property entered overlays the other, or force change the color with! important (although it is not recommended)
 
 2.4 The Box Model
 	
