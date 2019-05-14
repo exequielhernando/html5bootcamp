@@ -1,21 +1,28 @@
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 header, nav, section, article, aside, footer{
-    border: 2px solid rgb(95, 19, 19);
-    padding: 0.8em;
-    margin: 0.8em;
+    border: 1px solid rgb(95, 19, 19);
 }
-nav, section, aside{  
-    float: left;
-    width: 31.5%;
-    height: 25em;
+.navigation, .sidebar{
+    width: 24%;
 }
-footer{
-    clear: both;
+.content{
+    width: 50%;
 }
+.content-box .navigation, .content-box .content, .content-box .sidebar{
+    margin: 0 auto;
+}
+.content-box {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
 header, footer, aside, nav{
     background-color: rgb(190, 113, 19);
 }
@@ -26,16 +33,16 @@ body{
 header, footer{
     text-align: center;
 }
-header.header{
+.header{
     font-size: 46px;
 }
-footer.footer, aside.sidebar{
+.footer,.sidebar{
     font-size: 10px;
 }
-section.content{
+.content{
     font-size: 14px;
 }
-nav.navigation{
+.navigation{
     font-size: 12px;
 }
 /* all class attribute finishes with r (example header, footer) background be magenta.*/
