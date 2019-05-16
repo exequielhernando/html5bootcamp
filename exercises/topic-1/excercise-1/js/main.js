@@ -2,17 +2,21 @@
 console.log("Paso 1");
 
 let nodo_section = document.getElementById("hello-world");
+let btn_greet = document.getElementById("greet");
+let hidden = setTimeout('hidden_section()', 3000);
+console.log("Paso 3");
 
-hidden_section();
+btn_greet.addEventListener("click", function() {
+    greet();    
+})
 
-console.log("Paso 4");
+
 
 function hidden_section() {
+    nodo_section.classList.add ("section-hidden")   ;
     console.log("Paso 2");
-
-    nodo_section.classList.add ("section-hidden");
-    console.log("Paso 3");
-
 }   
 
-console.log("Paso 5");
+function greet() {
+    alert("Says: Hello World with alert")    
+}
