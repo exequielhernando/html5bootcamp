@@ -12,7 +12,13 @@ const URL2 = "https://api.github.com/search/repositories";
 // console.log("Paso 3");
 
 btn_get_data_with_params.addEventListener("click", function(){
-    get_data_with_params();
+    let repo_searched = document.querySelector(".repository-name").value.toLowerCase();
+    if(repo_searched != ""){
+        get_data_input(repo_searched);
+    }
+    else{
+        get_data_with_params();
+    }
 })
 
 btn_get_response.addEventListener("click", function() {
@@ -123,13 +129,14 @@ function get_data_with_params(){
             if(res.ok){
                 return res.json();
             }  
-            reject("Error! Page not found. Status: " + response.status);      
+            reject("Error! Page not found. Status: " + res.status);      
         })
         .then(function(res) {
             resolve(res);
             let container_list = document.querySelector(".container-list ul");
+            container_list.innerHTML = "";
             for (let index = 0; index < res.items.length; index++) {
-                container_list.innerHTML += "<li> " + index + "- "+  res.items[index].full_name + "</li>"  ;
+                container_list.innerHTML += "<li> " + (index+1)  + "- "+  res.items[index].full_name + "</li>"  ;
                 console.log(res.items[index].full_name);
             }  
         }).catch(function(err){
@@ -138,7 +145,29 @@ function get_data_with_params(){
         });
     });
 };
-
+function get_data_input(repo_searched){
+    return new Promise((resolve, reject) =>{
+        fetch(URL2 + "?q=" + repo_searched)
+        .then(function(res) {
+            if(res.ok){
+                return res.json();
+            }  
+            reject("Error! Page not found. Status: " + res.status);      
+        })
+        .then(function(res) {
+            resolve(res);
+            let container_list = document.querySelector(".container-list ul");
+            container_list.innerHTML = "";
+            for (let index = 0; index < res.items.length; index++) {
+                container_list.innerHTML += "<li> " + (index+1)  + "- "+  res.items[index].full_name + "</li>"  ;
+                console.log(res.items[index].full_name);
+            }  
+        }).catch(function(err){
+            reject(Error("Network Error"));
+            console.error('fetch failed', err);
+        });
+    });
+};
 // function get_data_with_params(){
 //     let repo_searched = document.querySelector(".repository-name").value.toLowerCase();
 
