@@ -1,5 +1,5 @@
 "use strict";
-console.log("Paso 1");
+// console.log("Paso 1");
 
 let nodo_section = document.getElementById("hello-world");
 let btn_get_response = document.querySelector("#greet");
@@ -8,7 +8,8 @@ let api_response = document.getElementById("api-response");
 let btn_get_data_with_params = document.querySelector(".search-repository");
 const URL = "http://api.icndb.com/jokes/random";
 const URL2 = "https://api.github.com/search/repositories";
-console.log("Paso 3");
+
+// console.log("Paso 3");
 
 btn_get_data_with_params.addEventListener("click", function(){
     get_data_with_params();
@@ -116,31 +117,56 @@ function get_data(){
 };
 
 function get_data_with_params(){
-    fetch(URL2)
-    .then(function(res){
-      if(!res.ok){
-        console.log("error");
-      }
-      return res.json();
-    })
-    .then(function(res) {
-        let repo_searched = document.querySelector(".repository-name").value.toLowerCase();
-        console.log(repo_searched);
-      
-        let container_list = document.querySelector(".container-list");
-        container_list.innerHTML = "";
-        console.log(res.documentation_url);          
-        let repo_name = res;
-        if ( repo_searched === repo_name) {
-            container_list.innerHTML += "<li>" + data.resource + "</li>"  ;
-        }
-        else {
-            container_list.innerHTML += res.errors["0"].code;
-        }
-            
-    })
-    
-    .catch(function(e){
-      console.log(e);
+    return new Promise( (resolve, reject) => {
+        fetch(URL2 + "?q=JavaScript")
+        .then(function(res) {
+            if(res.ok){
+                return res.json();
+            }  
+            reject("Error! Page not found. Status: " + response.status);      
+        })
+        .then(function(res) {
+            resolve(res);
+            let container_list = document.querySelector(".container-list ul");
+            for (let index = 0; index < res.items.length; index++) {
+                container_list.innerHTML += "<li> " + index + "- "+  res.items[index].full_name + "</li>"  ;
+                console.log(res.items[index].full_name);
+            }  
+        }).catch(function(err){
+            reject(Error("Network Error"));
+            console.error('fetch failed', err);
+        });
     });
-  }
+};
+
+// function get_data_with_params(){
+//     let repo_searched = document.querySelector(".repository-name").value.toLowerCase();
+
+//     console.log(repo_searched);
+//     fetch(URL2 + "?q=JavaScript")
+//     .then(function(res){
+//       if(!res.ok){
+//         console.log("error");
+//       }
+//       return res.json();
+//     })
+//     .then(function(res) {
+       
+      
+//         let container_list = document.querySelector(".container-list");
+//         container_list.innerHTML = "";
+//         console.log(res.documentation_url);          
+//         let repo_name = res;
+//         if ( repo_searched === repo_name) {
+//             container_list.innerHTML += "<li>" + data.resource + "</li>"  ;
+//         }
+//         else {
+//             container_list.innerHTML += res.errors["0"].code;
+//         }
+            
+//     })
+    
+//     .catch(function(e){
+//       console.log(e);
+//     });
+//   }
