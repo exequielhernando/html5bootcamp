@@ -53,3 +53,6 @@ footer{
 .section-hidden{
     display: none;
 }
+.background-red{
+    background-color: red;
+}
