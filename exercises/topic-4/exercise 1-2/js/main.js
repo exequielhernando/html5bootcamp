@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     //Check browser support
     let nodo_text_saved = document.getElementById("saved_text");
+    let nodo_text_destination = document.getElementById("drop_text");
     let btn_text_save = document.getElementById("btn_save_text");
     let btn_delete_text = document.getElementById("btn_detele_text");
     let btn_show_information = document.getElementById("btn_show_information");
@@ -105,4 +106,31 @@ document.addEventListener("DOMContentLoaded", function(){
         };
     }
     startDBIndexed();
+    
+    //Drag and Drop
+    nodo_text_saved.addEventListener("dragstart", function(event){
+        start_drag(event);
+    });
+    
+    nodo_text_destination.addEventListener("dragenter", function(event){
+        event.stopPropagation();
+        event.preventDefault();
+    });
+    nodo_text_destination.addEventListener("dragover", function(event){
+        event.stopPropagation();
+        event.preventDefault();        
+    });
+    nodo_text_destination.addEventListener("drop", function(){
+        drop_text(event);   
+    });
+    
+    function start_drag(event) {
+        let text_droped = nodo_text_saved.value; 
+        event.dataTransfer.setData("text/plain", text_droped);
+    };
+    function drop_text(event) {
+        event.preventDefault();
+        nodo_text_destination.value = event.dataTransfer.getData("text");
+          
+    };
 });
