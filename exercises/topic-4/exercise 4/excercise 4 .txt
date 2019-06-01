@@ -1,0 +1,14 @@
+
+
+La ventajas de svg sobre mapa de bits son que no se distorcionan al aumentarlas ya que las formas se agrandan proporcionalmente, 
+pero svg presenta varias limitaciones para describir imágenes geométricamente imperfectas (como un paisaje), 
+ya que es prácticamente imposible reconstruir con exactitud formas irregulares a partir de agrupaciones de figuras geométricas. 
+Por eso, las cámaras digitales utilizan formatos de mapa de bits como JPEG.
+
+En cuanto al uso de SVG debemos limitarnos a principalmente a:
+
+	-> Elementos geométricos vectoriales formados por rectas y curvas.
+	-> Texto
+	-> Imágenes sencillas que puedan formarse a partir del contenido anterior.
+
+Ya que tamp0co podemos editarlas, sino es con un editor de imagenes vectoriales!
