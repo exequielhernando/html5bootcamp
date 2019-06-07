@@ -17,22 +17,22 @@ class App extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                  <Link to={'/'} className="nav-link">Movies</Link>
+                  <Link to={'/index'} className="nav-link">Movies</Link>
                 </li>
                 <li className="nav-item">
                   <Link to={'/create'} className="nav-link">Create</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/index'} className="nav-link">Index</Link>
+                  <Link to={'/edit'} className="nav-link">Edit</Link>
                 </li>
               </ul>
             </div>
           </nav> <br/>
           <h2>Welcome to your favourite site of movies</h2> <br/>
           <Switch>
+              <Route path='/index' component={ Index } />
               <Route exact path='/create' component={ Create } />
               <Route path='/edit/:id' component={ Edit } />
-              <Route path='/index' component={ Index } />
           </Switch>
         </div>
       </Router>
