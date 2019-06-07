@@ -8,12 +8,17 @@ import Edit from './movies/edit.component';
 import Index from './movies/index.component';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.movies = [];
+  };
+
   render() {
     return (
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand"></Link>
+            <Link to={'/'} className="navbar-brand">Netflix</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
               <li className="nav-item">
@@ -30,8 +35,8 @@ class App extends Component {
           </nav> <br/>
           <h2>Welcome to your favourite site of movies</h2> <br/>
           <Switch>
-              <Route path='/index' component={ Index } />
-              <Route exact path='/create' component={ Create } />
+              <Route path='/index' component={ () => <Index movies={this.movies}/>}/>
+              <Route exact path='/create' render={ () => <Create movies={this.movies}/>}/>
               <Route path='/edit/:id' component={ Edit } />
           </Switch>
         </div>
