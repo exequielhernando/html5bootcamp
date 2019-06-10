@@ -37,7 +37,7 @@ class App extends Component {
           <Switch>
               <Route path='/index' component={ () => <Index movies={this.movies}/>}/>
               <Route exact path='/create' render={ () => <Create movies={this.movies}/>}/>
-              <Route path='/edit/:id' component={ Edit } />
+              <Route path='/edit/:id' component={ () => <Edit movies={this.movies}/> }/>
           </Switch>
         </div>
       </Router>

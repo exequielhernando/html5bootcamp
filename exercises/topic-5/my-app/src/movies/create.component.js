@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 import Index from './index.component';
 
-
-
 export default class Create extends Component {
     constructor(props){
         super(props);
