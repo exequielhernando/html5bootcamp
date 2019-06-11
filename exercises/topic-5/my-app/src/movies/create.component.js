@@ -14,7 +14,7 @@ export default class Create extends Component {
         this.state = {
             movie_title: '',
             movie_year: '',
-            movie_duration: '0'
+            movie_duration: ''
         }
     };
     onChangeMovieTitle(event){

@@ -32,7 +32,7 @@ export default class Edit extends Component {
             movie_duration: event.target.value
         });
     };
-    onEdit(event){
+    onSubmit(event){
         event.preventDefault();
         console.log(`The value are ${this.state.movie_title}, ${this.state.movie_year}, and ${this.state.movie_duration}`);
         let newMovie = {
@@ -57,7 +57,7 @@ export default class Edit extends Component {
                 <div className="col-6">
                     <div style={{marginTop: 10}}>
                         <h3>Add New Movie</h3>
-                        <form onEdit={this.onEdit}>
+                        <form onEdit={this.onSubmit}>
                             <div className="form-group">
                                 <label>Add Movie Title:  </label>
                                 <input type="text" 
@@ -83,7 +83,7 @@ export default class Edit extends Component {
                                     required/>
                             </div>
                             <div className="form-group">
-                                <input type="edit" value="Edit Movie" className="btn btn-primary"/>
+                                <input type="onSubmit" value="Edit Movie" className="btn btn-primary"/>
                             </div>
                         </form>
                     </div>

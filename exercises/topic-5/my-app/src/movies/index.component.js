@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 export default class Index extends Component {
     constructor(props){
         super(props);
-        this.delete = this.delete.bind(this);
-
         this.state = {
-            movies: this.props.movies
+            movies: this.props.movies,
         }
     }
     delete(i) {
@@ -22,13 +20,15 @@ export default class Index extends Component {
                 <td>{movie.title}</td>
                 <td>{movie.year}</td>
                 <td>{movie.duration}</td>
-                <td><Link to={"/edit/"+this.props.key} className="btn btn-primary">Edit</Link></td>
-                <td><button onClick={this.delete} className="btn btn-danger">Delete</button></td>
+                <td><Link to={"/edit/"+this.props.movies[i]} className="btn btn-primary">Edit</Link></td>
+                <td><button  className="btn btn-danger">Delete</button></td>
             </tr>            
          );
          for (let index = 0; index < listMovies.length; index++) {
             console.log(listMovies[index].key);             
          }
+         console.log(this.props.movies[0]);
+         
         return (
             <table className="table">
                 <thead className="thead-light">
