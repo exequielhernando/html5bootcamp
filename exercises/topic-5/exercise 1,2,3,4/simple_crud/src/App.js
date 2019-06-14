@@ -11,6 +11,7 @@ class App extends Component {
     this.onChangeMovieDuration = this.onChangeMovieDuration.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onDelete = this.onDelete.bind(this);
+    this.onEdit = this.onEdit.bind(this);
     this.state = {
       movie_title : '',
       movie_year : '',
@@ -49,16 +50,22 @@ class App extends Component {
     });
   }
   onEdit(i){
-
+    let movie = this.state.movies[i];
+    console.log(movie);
+    
     let title = this.state.movie_title;
     let year = this.state.movie_year;
     let duration = this.state.movie_duration;
-    let movie = this.state.movies[i];
-
-    movie.title = title;
-    movie.year = year;
-    movie.duration = duration;
     
+   
+
+    if ((title && year && duration) !== '') {
+      movie.title = title;
+      movie.year = year;
+      movie.duration = duration;
+    } else {
+      alert("You must complete the fields before editing")
+    }
     this.setState({
       movie_title: '',
       movie_year: '',
